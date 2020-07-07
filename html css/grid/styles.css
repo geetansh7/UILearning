@@ -1,0 +1,155 @@
+#parent-div{
+	display: grid; /*grid is block level, value can also be inline-grid*/
+	grid-template-columns: [firstcol] 30px 50% 1fr 2fr;
+	grid-template-rows: 25% [secondrow] 30px;
+	/*justify-items: center;
+	align-items: end;*/
+	place-items: end center;
+}
+
+#parent-div-area{
+	display: grid;
+	grid-template-columns: 50px 50px 50px 50px;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	"header header header header"
+	"main main . sidebar"
+	"footer footer footer footer";
+	/*grid-template: "header header header header" auto 
+					 "main main . sidebar" auto
+					 "footer footer footer footer" auto
+					 / 50px 50px 50px 50px;*/
+	/*grid-column-gap: 2px;
+	grid-row-gap: 2px;*/
+	/*gap: 10px;*/
+	grid-gap: 3px 2px;
+	/*justify-content: center;
+	align-content: end;*/
+	place-content: end center;
+}
+.header{
+	grid-area: header;
+	/*grid-area: 2/2/3/4;*/ /*grid-row-start + grid-column-start + grid-row-end + grid-column-end*/
+	background: lightgray;
+}
+.footer{
+	grid-area: footer;
+	background: pink;
+}
+.main{
+	grid-area: main;
+	background: blue;
+}
+.sidebar{
+	grid-area: sidebar;
+	background: yellow;
+}
+
+#parent-div-auto{
+	display: grid;
+	grid-template-columns: [firstcol] 50px 50px;
+	grid-template-rows: 30px 30px;
+	grid-auto-rows: 1px;  /*by default this value is 0px, so 52nd row seems to be just beneath container*/
+	grid-auto-columns: 10px;
+}
+#sub-div1{
+	grid-column: firstcol/2;
+	grid-row: 52/53;
+}
+#sub-div2{
+	grid-column: 5/6;
+	grid-row: 1/2;
+}
+
+#parent-div-autoflow{
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: 50px 50px 50px 50px 50px;
+	grid-template-rows: 30px 30px;
+	grid-auto-flow: column; /*default value is row, dense value attempt to fill in holes earlier in the grid if smaller items come up later*/
+}
+#sub-div3{
+	grid-column: 1/2;
+	grid-row: 1/3;
+	/*grid-row: 5/6;*/    /* Auto-flow also takes into consideration the auto rows created*/
+	background: red;
+}
+#sub-div4{
+	grid-column: 5/6;
+	grid-row: 1/3;
+	background: orange;
+}
+
+/*grid-template shorthand doesnot reset other implicit grid properties
+(grid-auto-rows, grid-auto-flow etc), 
+so it is preferred to use grid shorthand property since 
+it resets everything other than not mentioned properties
+*/
+
+/*------The following two code blocks are equivalent:
+.container {
+    grid: 100px 300px / 3fr 1fr;
+  }
+.container {
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 3fr 1fr;
+  }
+
+----The following two code blocks are equivalent:
+
+.container {
+    grid: auto-flow / 200px 1fr;
+  }
+.container {
+    grid-auto-flow: row;
+    grid-template-columns: 200px 1fr;
+  }
+
+----The following two code blocks are equivalent:
+
+.container {
+    grid: auto-flow dense 100px / 1fr 2fr;
+  }
+.container {
+    grid-auto-flow: row dense;
+    grid-auto-rows: 100px;
+    grid-template-columns: 1fr 2fr;
+  }
+
+----And the following two code blocks are equivalent:
+
+.container {
+    grid: 100px 300px / auto-flow 200px;
+  }
+.container {
+    grid-template-rows: 100px 300px;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+  }*/
+
+#parent-div-keywords{
+	display: grid;
+	/*grid-template-columns: minmax(200px, 300px) minmax(300px, 500px);*/
+	/*grid-template-columns: repeat(3, 1fr);*/
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-rows: 1fr min-content;
+}
+
+
+
+#parent-div-griditems{
+	display: grid;
+}
+#griditems1{
+	grid-column-start: 2;
+	grid-column-end: 5;
+	/*justify-self: center;
+	align-self: end;*/
+	place-self: end center;
+}
+#griditems2{
+	/*grid-column-start: 1;
+	grid-column-end: span 2;*/
+	grid-column: 1 / span 2;
+	/*grid-area: 2/2/3/4;*/ /*grid-row-start + grid-column-start + grid-row-end + grid-column-end*/
+}

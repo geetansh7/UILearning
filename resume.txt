@@ -1,0 +1,16 @@
+1. Protractor (Automation Testing Framework for AngularJS), JMeter (API and load Testing) and SonarQube for improving the code quality. She has experience in Agile based development, TFS etc. She has some designing experience (used PowerPoint and Adobe for creating web pages designs).
+2. RWD, AEM
+3. XML, Windows Forms, WPF, Infragistics Controls
+4. Basics of C#, JavaScript, Core Java, React, angular6, Kubernetes, docker, microservices, Jenkins, Pixi.js, WebStorm
+5. Jasmine/Karma framework and used the test-driven development methodology in unit testing
+•	Experience in designing application using low level design (LLD) with Microsoft Visio tool
+Gulp and Grunt
+PrimeNG, Kendo UI
+Angular Formly, Node.js, TFS, PrimeNG, jenkins
+Redux, PrimeNG, Yii2, Laravel
+6. CodeIgniter, CakePHP, Laravel, Codeigniter, AJAX
+7. .net
+8. •	Salesforce Certified Platform Developer - 1
+•	Blockchain Architecture Design and Use Case 
+Blockchain, Blockchain 2.0, Hyperledger, Ethereum, Consensus algorithms
+heidisql, Pixi JS, Prime NG, Apex, Visualforce, SQL Server, DBAmp
